@@ -1,0 +1,77 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "BaseCoin",
+"language": "GDScript",
+"path": "res://fsm_demo/entities/coin/scripts/base_coin.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://Character/Character.gd"
+}, {
+"base": "BaseCoin",
+"class": "Coin",
+"language": "GDScript",
+"path": "res://fsm_demo/entities/coin/scripts/coin.gd"
+}, {
+"base": "Node",
+"class": "FSM",
+"language": "GDScript",
+"path": "res://addons/node_fsm_plugin/fsm_node.gd"
+}, {
+"base": "Node2D",
+"class": "GameCamera",
+"language": "GDScript",
+"path": "res://Camera/Camera.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://fsm_demo/entities/player/scripts/player.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://addons/node_fsm_plugin/state_node.gd"
+} ]
+_global_script_class_icons={
+"BaseCoin": "",
+"Character": "",
+"Coin": "",
+"FSM": "res://addons/node_fsm_plugin/fsm_icon.svg",
+"GameCamera": "",
+"Player": "",
+"State": "res://addons/node_fsm_plugin/state_icon.svg"
+}
+
+[application]
+
+config/name="InTime"
+run/main_scene="res://Game.tscn"
+config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "node_fsm_plugin" )
+
+[input]
+
+Attack={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

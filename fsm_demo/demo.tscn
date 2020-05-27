@@ -1,0 +1,254 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://fsm_demo/scripts/game.gd" type="Script" id=1]
+[ext_resource path="res://fsm_demo/entities/wall/wall_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://fsm_demo/entities/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fsm_demo/entities/coin/coin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fsm_demo/sprites/background_tiles.png" type="Texture" id=5]
+[ext_resource path="res://fsm_demo/sfx/coin.wav" type="AudioStream" id=6]
+[ext_resource path="res://fsm_demo/sfx/win.wav" type="AudioStream" id=7]
+[ext_resource path="res://fsm_demo/bgm/frozen_in_time_chiptune.wav" type="AudioStream" id=8]
+
+[sub_resource type="TileSet" id=1]
+0/name = "background_tiles.png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 48, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "background_tiles.png 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 64, 16, 32, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "background_tiles.png 2"
+2/texture = ExtResource( 5 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 112, 16, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "background_tiles.png 3"
+3/texture = ExtResource( 5 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 144, 16, 64, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "background_tiles.png 4"
+4/texture = ExtResource( 5 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 48, 288, 208 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WorldBinding" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon" type="CollisionPolygon2D" parent="WorldBinding"]
+polygon = PoolVector2Array( 0, 184, 0, -568, 320, -568, 320, 184, 336, 184, 336, -584, -16, -584, -16, 184 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, 8 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1966073, 0, 0, -1966072, 0, 0, -1966071, 0, 0, -1966070, 0, 0, -1966069, 0, 0, -1966068, 0, 0, -1900539, 0, 0, -1900538, 0, 0, -1900537, 0, 0, -1900532, 0, 0, -1900531, 0, 0, -1900530, 0, 0, -1834989, 0, 0, -1769472, 0, 0, -1769471, 0, 0, -1769470, 0, 0, -1572847, 0, 0, -1572846, 0, 0, -1572845, 0, 0, -1441782, 0, 0, -1441781, 0, 0, -1441780, 0, 0, -1441779, 0, 0, -1310714, 0, 0, -1179648, 0, 0, -1179647, 0, 0, -1179646, 0, 0, -983035, 0, 0, -983034, 0, 0, -983033, 0, 0, -917492, 0, 0, -917491, 0, 0, -655343, 0, 0, -655342, 0, 0, -655341, 0, 0, -524282, 0, 0, -524280, 0, 0, -524277, 0, 0, -524274, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -196597, 0, 0, -196596, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, 7, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 196618, 0, 0, 196619, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 393220, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 24, 48 )
+
+[node name="Coins" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Coin" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 120, 144 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 152, 144 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 184, 144 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 224, 80 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 256, 80 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 176, 32 )
+
+[node name="Coin10" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 272, -16 )
+
+[node name="Coin35" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 288, -40 )
+
+[node name="Coin11" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 304, -16 )
+
+[node name="Coin12" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 192, -64 )
+
+[node name="Coin25" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 88, -32 )
+
+[node name="Coin13" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 24, -96 )
+
+[node name="Coin14" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 120, -152 )
+
+[node name="Coin15" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 160, -152 )
+
+[node name="Coin16" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 208, -152 )
+
+[node name="Coin17" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 296, -176 )
+
+[node name="Coin18" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 160, -264 )
+
+[node name="Coin19" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 24, -304 )
+
+[node name="Coin20" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 104, -336 )
+
+[node name="Coin21" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 136, -360 )
+
+[node name="Coin22" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 192, -368 )
+
+[node name="Coin23" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 280, -400 )
+
+[node name="Coin24" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 24, -448 )
+
+[node name="Coin26" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 112, -496 )
+
+[node name="Coin27" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 128, -520 )
+
+[node name="Coin34" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 144, -544 )
+
+[node name="Coin28" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 144, -496 )
+
+[node name="Coin29" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 160, -520 )
+
+[node name="Coin33" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 176, -544 )
+
+[node name="Coin30" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 176, -496 )
+
+[node name="Coin31" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 192, -520 )
+
+[node name="Coin32" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 208, -496 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 28, 144 )
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 72, 80.3235 )
+
+[node name="Parallax" type="ParallaxBackground" parent="."]
+
+[node name="BaseLayer" type="ParallaxLayer" parent="Parallax"]
+motion_scale = Vector2( 1, 0.5 )
+motion_offset = Vector2( 0, -40 )
+
+[node name="Background" type="TileMap" parent="Parallax/BaseLayer"]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1179637, 3, 0, -1048573, 536870914, 0, -589823, 2, 0, -65545, 4, 0, -131063, 4, 0, -131056, 536870914, 0, 65545, 2, 0 )
+
+[node name="FrontLayer" type="ParallaxLayer" parent="Parallax"]
+motion_scale = Vector2( 1, 0.7 )
+
+[node name="Front" type="TileMap" parent="Parallax/FrontLayer"]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1703921, 1, 0, -1507323, 0, 0, -983024, 1, 0, -655355, 536870912, 0 )
+
+[node name="CoinPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -15.0
+
+[node name="WinPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -12.0
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -10.0
+autoplay = true
+[connection signal="game_completed" from="." to="Player" method="_on_Game_game_completed"]

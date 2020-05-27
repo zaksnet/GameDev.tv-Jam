@@ -1,0 +1,182 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Character/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Camera/Camera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Temp-Character.svg" type="Texture" id=3]
+[ext_resource path="res://Assets/building.svg" type="Texture" id=4]
+[ext_resource path="res://Assets/Camera-Temp.svg" type="Texture" id=5]
+[ext_resource path="res://Assets/Road.svg" type="Texture" id=6]
+[ext_resource path="res://Fonts/zorque.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Game.gd" type="Script" id=8]
+[ext_resource path="res://Assets/enemy.svg" type="Texture" id=9]
+[ext_resource path="res://GrabIndicator.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Enemy.gd" type="Script" id=11]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 82.4844
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 14.1705
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 29.5307
+
+[sub_resource type="StyleBoxFlat" id=4]
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="DynamicFont" id=5]
+size = 34
+font_data = ExtResource( 7 )
+
+[node name="Game" type="Node"]
+script = ExtResource( 8 )
+
+[node name="RoadChunk" type="Node2D" parent="."]
+position = Vector2( 761.481, 991.133 )
+
+[node name="Road" type="Sprite" parent="RoadChunk"]
+texture = ExtResource( 6 )
+
+[node name="Road2" type="Sprite" parent="RoadChunk"]
+position = Vector2( 7.21667, -586.307 )
+rotation = -3.14159
+texture = ExtResource( 6 )
+
+[node name="RoadChunk2" type="Node2D" parent="."]
+position = Vector2( 768, -704 )
+rotation = 3.14159
+
+[node name="Road" type="Sprite" parent="RoadChunk2"]
+texture = ExtResource( 6 )
+
+[node name="Road2" type="Sprite" parent="RoadChunk2"]
+position = Vector2( 7.21667, -586.307 )
+rotation = -3.14159
+texture = ExtResource( 6 )
+
+[node name="Camera" parent="." instance=ExtResource( 2 )]
+position = Vector2( 472.415, 468.266 )
+draw_angle_to = 130
+draw_dir = 1
+default_draw_speed = 5
+
+[node name="Sprite" type="Sprite" parent="Camera"]
+position = Vector2( 0, -1.2923 )
+texture = ExtResource( 5 )
+
+[node name="Camera2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 476.292, 297.675 )
+draw_angle_to = 130
+default_draw_speed = 5
+
+[node name="Sprite" type="Sprite" parent="Camera2"]
+position = Vector2( 0, -1.2923 )
+texture = ExtResource( 5 )
+
+[node name="building" type="Sprite" parent="."]
+position = Vector2( 217.613, 295.073 )
+texture = ExtResource( 4 )
+
+[node name="building2" type="Sprite" parent="."]
+position = Vector2( 215.221, 982.582 )
+texture = ExtResource( 4 )
+
+[node name="building3" type="Sprite" parent="."]
+position = Vector2( 1289.08, 994.541 )
+texture = ExtResource( 4 )
+
+[node name="building4" type="Sprite" parent="."]
+position = Vector2( 1279.51, 312.917 )
+texture = ExtResource( 4 )
+
+[node name="Enemy" type="Node2D" parent="."]
+script = ExtResource( 11 )
+time_hours = 1
+time_minutes = 12
+
+[node name="Sprite" type="Sprite" parent="Enemy"]
+position = Vector2( 925.509, 182.307 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 9 )
+
+[node name="Area2D" type="Area2D" parent="Enemy/Sprite"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Sprite/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 656.534, 322.913 )
+SPEED = 500
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( -1, 0 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="Player"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+shape = SubResource( 3 )
+
+[node name="GrabIndicator" parent="Player" instance=ExtResource( 10 )]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -300.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/UI/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 295.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 4 )
+
+[node name="PlayerTime" type="Label" parent="CanvasLayer/UI/MarginContainer/Panel"]
+margin_top = 9.0
+margin_right = 290.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 5 )
+text = "11:11:11:11"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Player/Area2D" to="Player" method="_on_Area2D_area_exited"]

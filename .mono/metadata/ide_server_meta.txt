@@ -1,0 +1,2 @@
+﻿57124
+C:\Godot\Runtimes\GodotStable\GodotStable.exe

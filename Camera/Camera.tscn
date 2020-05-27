@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/node_fsm_plugin/fsm_node.gd" type="Script" id=1]
+[ext_resource path="res://Camera/Patrol.gd" type="Script" id=2]
+[ext_resource path="res://Camera/Alert.gd" type="Script" id=3]
+[ext_resource path="res://Camera/Camera.gd" type="Script" id=4]
+[ext_resource path="res://Camera/CameraArea.tscn" type="PackedScene" id=5]
+
+[node name="Camera" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="FSM" type="Node" parent="."]
+script = ExtResource( 1 )
+active = true
+initial_state = "Patrol"
+target = NodePath("..")
+
+[node name="Patrol" type="Node" parent="FSM"]
+script = ExtResource( 2 )
+
+[node name="Alert" type="Node" parent="FSM"]
+script = ExtResource( 3 )
+
+[node name="Area2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( -0.94989, 0.072052 )
+rotation = 3.14159
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

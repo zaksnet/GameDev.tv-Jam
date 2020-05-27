@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/frozen_in_time_chiptune.wav-34aaf3e53681f18bc64d011b9cb6e621.sample"
+
+[deps]
+
+source_file="res://fsm_demo/bgm/frozen_in_time_chiptune.wav"
+dest_files=[ "res://.import/frozen_in_time_chiptune.wav-34aaf3e53681f18bc64d011b9cb6e621.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0
