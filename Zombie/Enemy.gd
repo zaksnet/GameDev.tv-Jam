@@ -12,18 +12,45 @@ var speed = 200
 
 onready var playerNode = get_node("/root/Level1/Player")
 onready var bloodSplat = preload("res://Zombie/BloodSplat.tscn")
+onready var zombieDieExplosion = preload("res://Zombie/ZombieExplosion.tscn")
 
 var velocity = Vector2()
 
 
 var growls = [
-	preload("res://Assets/SFX/sfx_zombie_growl_01.wav"),
-	preload("res://Assets/SFX/sfx_zombie_growl_02.wav"),
-	preload("res://Assets/SFX/sfx_zombie_growl_03.wav")
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie growl 01.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie growl 02.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie growl 03.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie growl 04.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie growl 05.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie growl 06.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie growl 07.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 01.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 02.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 03.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 04.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 05.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 06.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 07.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 08.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 09.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 10.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 11.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 12.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 13.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 14.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 15.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 16.ogg"),
+]
+
+var zombieExplostions = [
+	preload("res://Assets/Zombie/SFX/00 - zombie explosion - sfx zombieexplosion 01.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombie explosion - sfx zombieexplosion 02.ogg"),
+	preload("res://Assets/Zombie/SFX/00 - zombie explosion - sfx zombieexplosion 03.ogg"),
 ]
 
 func play_growl():
-	var rnd = rand_range(0, 3)
+	var rnd = rand_range(0, growls.size())
 	$AudioStreamPlayer2D.stream = growls[rnd]
 	$AudioStreamPlayer2D.play()
 	
@@ -45,9 +72,17 @@ func take_damage(rot, dmg):
 	# TODO: We should probably pass the damage type and have custom damage factor for each damage type.
 	$Tween.interpolate_property($AnimationPlayer, "modulate", Color(1, 0, 0), Color(1, 1 , 1), 1, Tween.TRANS_SINE, Tween.EASE_OUT)
 	$Tween.start()
+	
+	blood_splat(rot)
 	took_damage = rot
 	health -= dmg
 	check_health()
+	
+func blood_splat(rot):
+	var inst = bloodSplat.instance()
+	inst.global_position = global_position
+	inst.rot = rot
+	get_tree().get_root().add_child(inst)
 	
 	
 func check_health():
@@ -63,15 +98,14 @@ func check_health():
 		
 		
 func die():
+	var inst = zombieDieExplosion.instance()
+	inst.stream = zombieExplostions[rand_range(0, zombieExplostions.size())]
+	get_tree().get_root().add_child(inst)
 	queue_free()
 
 	
 func push_back(rot):
 	#look_at(playerNode.position)
-	var inst = bloodSplat.instance()
-	inst.global_position = global_position
-	inst.rot = rot
-	get_tree().get_root().add_child(inst)
 	
 	velocity = Vector2(1000,  0).rotated(rot)
 	velocity = move_and_slide(velocity)

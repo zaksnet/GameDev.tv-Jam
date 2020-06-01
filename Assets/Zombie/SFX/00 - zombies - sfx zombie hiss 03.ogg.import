@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/00 - zombies - sfx zombie hiss 03.ogg-9743e8aebe68732412002464cc665876.oggstr"
+
+[deps]
+
+source_file="res://Assets/Zombie/SFX/00 - zombies - sfx zombie hiss 03.ogg"
+dest_files=[ "res://.import/00 - zombies - sfx zombie hiss 03.ogg-9743e8aebe68732412002464cc665876.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

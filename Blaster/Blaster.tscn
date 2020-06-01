@@ -4,7 +4,6 @@
 [ext_resource path="res://Blaster/Blaster.gd" type="Script" id=2]
 [ext_resource path="res://Assets/sfx_plasmagun_shot_01.wav" type="AudioStream" id=3]
 
-
 [node name="Blaster" type="Sprite"]
 position = Vector2( -11.0778, 8.92458 )
 scale = Vector2( 1.5, 1.5 )
