@@ -1,5 +1,6 @@
 extends Node
 onready var zombie = preload("res://Zombie/Enemy.tscn")
+onready var grass = preload("res://Grass/Grass.tscn")
 var game_over_time: float = 300
 
 func _ready():
@@ -9,7 +10,20 @@ func _ready():
 
 	$UI/GameOverScreen.visible = false
 	reset_hearts()
+	generate_grass()
 	$StageMusic.play()
+	
+func generate_grass():
+	# Generates random grass
+	var map_range = Vector2(10000, -10000)
+
+	for x in 2000:
+		var inst = grass.instance()
+		randomize()
+		var rnd = rand_range(map_range.x, map_range.y)
+		inst.position.x = rand_range(map_range.x, map_range.y)
+		inst.position.y = rand_range(map_range.x, map_range.y)
+		$YSort.add_child(inst)
 	
 func win():
 	$UI/GameOverScreen/HBoxContainer/GameOverLabel.text = "To be continued..."

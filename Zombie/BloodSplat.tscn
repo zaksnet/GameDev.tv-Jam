@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Zombie/BloodSplat.gd" type="Script" id=1]
+
+[node name="BloodSplat" type="CPUParticles2D"]
+position = Vector2( -3.15466, -0.996155 )
+emitting = false
+amount = 21
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 21.64
+gravity = Vector2( 0, 90 )
+initial_velocity = 150.53
+initial_velocity_random = 1.0
+scale_amount = 5.0
+scale_amount_random = 1.0
+color = Color( 0.866667, 0.105882, 0.105882, 1 )
+hue_variation = 0.04
+hue_variation_random = 1.0
+script = ExtResource( 1 )

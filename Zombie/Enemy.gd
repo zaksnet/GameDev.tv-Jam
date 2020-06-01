@@ -11,6 +11,7 @@ var init_state = ""
 var speed = 200
 
 onready var playerNode = get_node("/root/Level1/Player")
+onready var bloodSplat = preload("res://Zombie/BloodSplat.tscn")
 
 var velocity = Vector2()
 
@@ -67,6 +68,10 @@ func die():
 	
 func push_back(rot):
 	#look_at(playerNode.position)
+	var inst = bloodSplat.instance()
+	inst.global_position = global_position
+	inst.rot = rot
+	get_tree().get_root().add_child(inst)
 	
 	velocity = Vector2(1000,  0).rotated(rot)
 	velocity = move_and_slide(velocity)
