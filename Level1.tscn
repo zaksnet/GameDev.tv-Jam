@@ -1,0 +1,714 @@
+[gd_scene load_steps=140 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Zombie/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Blaster/Blaster.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00025.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00023.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00028.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00024.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00029.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00026.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00027.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00022.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00021.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00014.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00020.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00000.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00006.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00001.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00013.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00015.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00010.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00018.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00003.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00007.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00002.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00012.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00016.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00017.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00019.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00005.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00004.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00009.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00011.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Grass/Grass/Grass_00008.png" type="Texture" id=33]
+[ext_resource path="res://Level1.gd" type="Script" id=34]
+[ext_resource path="res://Tiles/new_tileset.tres" type="TileSet" id=35]
+[ext_resource path="res://Boss/Boss.gd" type="Script" id=36]
+[ext_resource path="res://Assets/Boss/Idle/Idle_00003.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Boss/Idle/Idle_00002.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Boss/Idle/Idle_00001.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Boss/Idle/Idle_00004.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Boss/Idle/Idle_00007.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Boss/Idle/Idle_00008.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Boss/Idle/Idle_00005.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Boss/Idle/Idle_00000.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Boss/Idle/Idle_00009.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Boss/Idle/Idle_00006.png" type="Texture" id=46]
+[ext_resource path="res://Boss/AttackState.gd" type="Script" id=47]
+[ext_resource path="res://Boss/IdleState.gd" type="Script" id=48]
+[ext_resource path="res://addons/node_fsm_plugin/fsm_node.gd" type="Script" id=49]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00029.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00030.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00028.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00031.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00033.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00032.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00025.png" type="Texture" id=56]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00024.png" type="Texture" id=57]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00027.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00026.png" type="Texture" id=59]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00020.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00021.png" type="Texture" id=61]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00022.png" type="Texture" id=62]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00023.png" type="Texture" id=63]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00015.png" type="Texture" id=64]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00016.png" type="Texture" id=65]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00017.png" type="Texture" id=66]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00018.png" type="Texture" id=67]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00019.png" type="Texture" id=68]
+[ext_resource path="res://Assets/Boss/Attack/Attack_00014.png" type="Texture" id=69]
+[ext_resource path="res://Boss/Sleeping.gd" type="Script" id=70]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00081.png" type="Texture" id=71]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00088.png" type="Texture" id=72]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00087.png" type="Texture" id=73]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00084.png" type="Texture" id=74]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00085.png" type="Texture" id=75]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00083.png" type="Texture" id=76]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00082.png" type="Texture" id=77]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00086.png" type="Texture" id=78]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00089.png" type="Texture" id=79]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00061.png" type="Texture" id=80]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00048.png" type="Texture" id=81]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00051.png" type="Texture" id=82]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00052.png" type="Texture" id=83]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00053.png" type="Texture" id=84]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00049.png" type="Texture" id=85]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00050.png" type="Texture" id=86]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00054.png" type="Texture" id=87]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00059.png" type="Texture" id=88]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00057.png" type="Texture" id=89]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00060.png" type="Texture" id=90]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00055.png" type="Texture" id=91]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00056.png" type="Texture" id=92]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00058.png" type="Texture" id=93]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00080.png" type="Texture" id=94]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00066.png" type="Texture" id=95]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00063.png" type="Texture" id=96]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00065.png" type="Texture" id=97]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00071.png" type="Texture" id=98]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00075.png" type="Texture" id=99]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00070.png" type="Texture" id=100]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00074.png" type="Texture" id=101]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00076.png" type="Texture" id=102]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00077.png" type="Texture" id=103]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00064.png" type="Texture" id=104]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00062.png" type="Texture" id=105]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00068.png" type="Texture" id=106]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00067.png" type="Texture" id=107]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00069.png" type="Texture" id=108]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00072.png" type="Texture" id=109]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00073.png" type="Texture" id=110]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00078.png" type="Texture" id=111]
+[ext_resource path="res://Assets/Boss/WakUp/WakeUp_00079.png" type="Texture" id=112]
+[ext_resource path="res://Boss/WakeUp.gd" type="Script" id=113]
+[ext_resource path="res://Assets/Heart.png" type="Texture" id=114]
+[ext_resource path="res://Assets/Fonts/prstart.ttf" type="DynamicFontData" id=115]
+[ext_resource path="res://Assets/Boss/boss zombie growl/00 - boss zombie growl - sfx zombiegrowl 01.ogg" type="AudioStream" id=116]
+[ext_resource path="res://Assets/Boss/boss hit the ground/00 - boss hit the ground - boss rumble.ogg" type="AudioStream" id=117]
+[ext_resource path="res://Player/Camera2D.gd" type="Script" id=118]
+[ext_resource path="res://Assets/Boss/00 - Stage - Music Level Master.ogg" type="AudioStream" id=119]
+[ext_resource path="res://Assets/Boss/00 - Stage - game over loop.ogg" type="AudioStream" id=120]
+[ext_resource path="res://Tiles/Fence.tscn" type="PackedScene" id=121]
+[ext_resource path="res://Assets/Herb.svg" type="Texture" id=122]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 10 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 16 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 32 ), ExtResource( 25 ), ExtResource( 18 ), ExtResource( 13 ), ExtResource( 19 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 21 ), ExtResource( 28 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 17.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 81 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 89 ), ExtResource( 93 ), ExtResource( 88 ), ExtResource( 90 ), ExtResource( 80 ), ExtResource( 105 ), ExtResource( 96 ), ExtResource( 104 ), ExtResource( 97 ), ExtResource( 95 ), ExtResource( 107 ), ExtResource( 106 ), ExtResource( 108 ), ExtResource( 100 ), ExtResource( 98 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 94 ), ExtResource( 71 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 78 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 79 ) ],
+"loop": true,
+"name": "WakeUp",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 69 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 57 ), ExtResource( 56 ), ExtResource( 59 ), ExtResource( 58 ), ExtResource( 52 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 54 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 45 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 81 ) ],
+"loop": true,
+"name": "Sleeping",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 310.103
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.662745, 0.227451, 0.227451, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.121569, 0.529412, 0.223529, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.890196, 0.894118, 0.901961, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 20
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxFlat" id=10]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.12549, 0.133333, 0.141176, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxFlat" id=12]
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.12549, 0.133333, 0.141176, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Shader" id=13]
+code = "shader_type canvas_item;
+
+uniform float blur_amount : hint_range(0, 5);
+
+void fragment() {
+	COLOR = textureLod(SCREEN_TEXTURE, SCREEN_UV, blur_amount);
+}"
+custom_defines = ""
+
+[sub_resource type="ShaderMaterial" id=14]
+shader = SubResource( 13 )
+shader_param/blur_amount = 1.618
+
+[sub_resource type="DynamicFont" id=15]
+size = 39
+font_data = ExtResource( 115 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.12549, 0.133333, 0.141176, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=17]
+extra_spacing_top = 5
+extra_spacing_bottom = 5
+extra_spacing_char = 5
+extra_spacing_space = 5
+font_data = ExtResource( 115 )
+
+[node name="Level1" type="Node"]
+script = ExtResource( 34 )
+
+[node name="Herb" type="Node2D" parent="."]
+position = Vector2( 2382, -1459 )
+
+[node name="Herb" type="Sprite" parent="Herb"]
+texture = ExtResource( 122 )
+
+[node name="Area2D" type="Area2D" parent="Herb"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Herb/Area2D"]
+shape = SubResource( 1 )
+
+[node name="StageMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 119 )
+volume_db = -15.878
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Grass" type="AnimatedSprite" parent="YSort"]
+position = Vector2( 271, 258 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 2 )
+frame = 14
+playing = true
+
+[node name="Grass2" type="AnimatedSprite" parent="YSort"]
+position = Vector2( -172, 189 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 2 )
+frame = 14
+playing = true
+
+[node name="Grass3" type="AnimatedSprite" parent="YSort"]
+position = Vector2( 159, 187 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 2 )
+frame = 13
+playing = true
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 535.864, 325.665 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_smoothed = true
+smoothing_enabled = true
+script = ExtResource( 118 )
+
+[node name="Blaster" parent="Player" instance=ExtResource( 3 )]
+position = Vector2( -54.4735, 22.132 )
+
+[node name="PlasmaTimer" type="Timer" parent="Player/Blaster"]
+one_shot = true
+
+[node name="Zombies" type="Node2D" parent="."]
+
+[node name="Zombie" parent="Zombies" instance=ExtResource( 2 )]
+position = Vector2( 1111, -410 )
+
+[node name="Zombie2" parent="Zombies" instance=ExtResource( 2 )]
+position = Vector2( 1966, 386 )
+
+[node name="Zombie11" parent="Zombies" instance=ExtResource( 2 )]
+position = Vector2( 1392, -1192 )
+
+[node name="Zombie10" parent="Zombies" instance=ExtResource( 2 )]
+position = Vector2( 1977, -932 )
+
+[node name="Zombie12" parent="Zombies" instance=ExtResource( 2 )]
+position = Vector2( 846, -802 )
+
+[node name="Zombie3" parent="Zombies" instance=ExtResource( 2 )]
+position = Vector2( 2379, -1192 )
+
+[node name="Zombie8" parent="Zombies" instance=ExtResource( 2 )]
+position = Vector2( -3, 175 )
+
+[node name="Zombie9" parent="Zombies" instance=ExtResource( 2 )]
+position = Vector2( 127, 290 )
+
+[node name="Zombie4" parent="Zombies" instance=ExtResource( 2 )]
+position = Vector2( 252, -738 )
+
+[node name="Zombie5" parent="Zombies" instance=ExtResource( 2 )]
+position = Vector2( 741, -1274 )
+
+[node name="Zombie6" parent="Zombies" instance=ExtResource( 2 )]
+position = Vector2( 2261, -515 )
+
+[node name="Zombie7" parent="Zombies" instance=ExtResource( 2 )]
+position = Vector2( 1360, -770 )
+
+[node name="Boss" type="KinematicBody2D" parent="."]
+position = Vector2( 2379, -1630 )
+script = ExtResource( 36 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Boss"]
+frames = SubResource( 3 )
+animation = "WakeUp"
+frame = 31
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boss"]
+visible = false
+polygon = PoolVector2Array( -53, 110, -57, 56, -80, 34, -88, -14, -66, -59, -33, -48, -27, -63, -28, -113, 39, -111, 38, -57, 44, -48, 79, -68, 105, -23, 102, 19, 77, 51, 62, 73, 61, 114 )
+
+[node name="Area2D" type="Area2D" parent="Boss"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Area2D"]
+shape = SubResource( 4 )
+
+[node name="FSM" type="Node" parent="Boss"]
+script = ExtResource( 49 )
+initial_state = "Sleeping"
+target = NodePath("..")
+
+[node name="Idle" type="Node" parent="Boss/FSM"]
+script = ExtResource( 48 )
+
+[node name="Sleeping" type="Node" parent="Boss/FSM"]
+script = ExtResource( 70 )
+
+[node name="Attack" type="Node" parent="Boss/FSM"]
+script = ExtResource( 47 )
+
+[node name="WakeUp" type="Node" parent="Boss/FSM"]
+script = ExtResource( 113 )
+
+[node name="Timer" type="Timer" parent="Boss"]
+
+[node name="Health" type="Panel" parent="Boss"]
+visible = false
+margin_left = -118.0
+margin_top = -167.0
+margin_right = 128.0
+margin_bottom = -142.0
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack" type="AudioStreamPlayer2D" parent="Boss"]
+stream = ExtResource( 117 )
+attenuation = 0.933033
+
+[node name="WakeUp" type="AudioStreamPlayer2D" parent="Boss"]
+stream = ExtResource( 116 )
+attenuation = 0.933033
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -25.0
+margin_right = 25.0
+margin_bottom = 28.0
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeLeft" type="Label" parent="UI/PanelContainer"]
+margin_left = 5.0
+margin_top = 7.0
+margin_right = 45.0
+margin_bottom = 21.0
+text = "00:00"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+margin_right = 150.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 140.0
+margin_bottom = 90.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer"]
+margin_right = 130.0
+margin_bottom = 52.0
+
+[node name="left" type="Button" parent="UI/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 28.0
+margin_right = 27.0
+margin_bottom = 52.0
+focus_mode = 0
+size_flags_vertical = 8
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = true
+button_mask = 0
+enabled_focus_mode = 0
+text = "a"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 31.0
+margin_right = 61.0
+margin_bottom = 52.0
+
+[node name="Top" type="Button" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 30.0
+margin_bottom = 24.0
+focus_mode = 0
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 10 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = true
+button_mask = 0
+enabled_focus_mode = 0
+text = "w"
+
+[node name="Bottom" type="Button" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 30.0
+margin_bottom = 52.0
+focus_mode = 0
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = true
+button_mask = 0
+enabled_focus_mode = 0
+text = "s"
+
+[node name="Right" type="Button" parent="UI/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 65.0
+margin_top = 28.0
+margin_right = 93.0
+margin_bottom = 52.0
+focus_mode = 0
+size_flags_vertical = 8
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = true
+button_mask = 0
+enabled_focus_mode = 0
+text = "d"
+
+[node name="PanelContainer2" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 130.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/MarginContainer/VBoxContainer/PanelContainer2"]
+margin_top = 5.0
+margin_right = 30.0
+margin_bottom = 19.0
+text = "Hold"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SprintIndicator" type="Button" parent="UI/MarginContainer/VBoxContainer/PanelContainer2"]
+margin_left = 34.0
+margin_right = 72.0
+margin_bottom = 24.0
+focus_mode = 0
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 12 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = true
+action_mode = 0
+button_mask = 0
+enabled_focus_mode = 0
+text = "Shift"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UI/MarginContainer/VBoxContainer/PanelContainer2"]
+margin_left = 76.0
+margin_top = 5.0
+margin_right = 130.0
+margin_bottom = 19.0
+text = "to Sprint"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -123.0
+margin_bottom = 42.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer2"]
+margin_top = 10.0
+margin_right = 113.0
+margin_bottom = 42.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Heart1" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer"]
+margin_right = 35.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 35, 32 )
+texture = ExtResource( 114 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Heart2" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer"]
+margin_left = 39.0
+margin_right = 74.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 35, 32 )
+texture = ExtResource( 114 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Heart3" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 78.0
+margin_right = 113.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 35, 32 )
+texture = ExtResource( 114 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverScreen" type="PanelContainer" parent="UI"]
+pause_mode = 2
+visible = false
+material = SubResource( 14 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HBoxContainer" type="VBoxContainer" parent="UI/GameOverScreen"]
+margin_left = 336.0
+margin_top = 265.0
+margin_right = 687.0
+margin_bottom = 335.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="GameOverLabel" type="Label" parent="UI/GameOverScreen/HBoxContainer"]
+margin_right = 351.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 15 )
+text = "GAME OVER"
+align = 1
+valign = 1
+
+[node name="Restart" type="Button" parent="UI/GameOverScreen/HBoxContainer"]
+margin_top = 44.0
+margin_right = 351.0
+margin_bottom = 70.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
+text = "RESTART"
+
+[node name="GameOverMusic" type="AudioStreamPlayer2D" parent="UI/GameOverScreen"]
+stream = ExtResource( 120 )
+attenuation = 0.307786
+
+[node name="GameTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Fence" parent="." instance=ExtResource( 121 )]
+position = Vector2( 2318, -1482 )
+
+[node name="Fence2" parent="." instance=ExtResource( 121 )]
+position = Vector2( 2318, -1452 )
+
+[node name="Fence3" parent="." instance=ExtResource( 121 )]
+position = Vector2( 2318, -1420 )
+
+[node name="Fence4" parent="." instance=ExtResource( 121 )]
+position = Vector2( 2318, -1389 )
+
+[node name="Fence12" parent="." instance=ExtResource( 121 )]
+position = Vector2( 2446, -1482 )
+
+[node name="Fence11" parent="." instance=ExtResource( 121 )]
+position = Vector2( 2446, -1452 )
+
+[node name="Fence10" parent="." instance=ExtResource( 121 )]
+position = Vector2( 2446, -1420 )
+
+[node name="Fence9" parent="." instance=ExtResource( 121 )]
+position = Vector2( 2446, -1389 )
+
+[node name="Fence5" parent="." instance=ExtResource( 121 )]
+position = Vector2( 2336, -1375 )
+rotation = 1.57079
+
+[node name="Fence6" parent="." instance=ExtResource( 121 )]
+position = Vector2( 2368, -1375 )
+rotation = 1.57079
+
+[node name="Fence7" parent="." instance=ExtResource( 121 )]
+position = Vector2( 2400, -1375 )
+rotation = 1.57079
+
+[node name="Fence8" parent="." instance=ExtResource( 121 )]
+position = Vector2( 2432, -1375 )
+rotation = 1.57079
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 35 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+[connection signal="body_entered" from="Herb/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Boss/Area2D" to="Boss/FSM/Sleeping" method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Boss/Timer" to="Boss/FSM/Idle" method="_on_Timer_timeout"]
+[connection signal="pressed" from="UI/GameOverScreen/HBoxContainer/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]

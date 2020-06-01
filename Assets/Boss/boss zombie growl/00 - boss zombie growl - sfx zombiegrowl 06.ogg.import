@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/00 - boss zombie growl - sfx zombiegrowl 06.ogg-57dfff7ea89ee21949afe3370a8356c9.oggstr"
+
+[deps]
+
+source_file="res://Assets/Boss/boss zombie growl/00 - boss zombie growl - sfx zombiegrowl 06.ogg"
+dest_files=[ "res://.import/00 - boss zombie growl - sfx zombiegrowl 06.ogg-57dfff7ea89ee21949afe3370a8356c9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

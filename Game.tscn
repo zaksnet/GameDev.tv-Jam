@@ -1,182 +1,191 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=50 format=2]
 
-[ext_resource path="res://Character/Character.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Camera/Camera.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Temp-Character.svg" type="Texture" id=3]
-[ext_resource path="res://Assets/building.svg" type="Texture" id=4]
-[ext_resource path="res://Assets/Camera-Temp.svg" type="Texture" id=5]
-[ext_resource path="res://Assets/Road.svg" type="Texture" id=6]
-[ext_resource path="res://Fonts/zorque.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://Game.gd" type="Script" id=8]
-[ext_resource path="res://Assets/enemy.svg" type="Texture" id=9]
-[ext_resource path="res://GrabIndicator.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Enemy.gd" type="Script" id=11]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00026.png" type="Texture" id=1]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00024.png" type="Texture" id=2]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00020.png" type="Texture" id=3]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00015.png" type="Texture" id=4]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00025.png" type="Texture" id=5]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00027.png" type="Texture" id=6]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00019.png" type="Texture" id=7]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00007.png" type="Texture" id=8]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00000.png" type="Texture" id=9]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00021.png" type="Texture" id=10]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00028.png" type="Texture" id=11]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00005.png" type="Texture" id=12]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00011.png" type="Texture" id=13]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00006.png" type="Texture" id=14]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00008.png" type="Texture" id=15]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00009.png" type="Texture" id=16]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00003.png" type="Texture" id=17]
+[ext_resource path="res://Heads/1x/Asset 48.png" type="Texture" id=18]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00022.png" type="Texture" id=19]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00014.png" type="Texture" id=20]
+[ext_resource path="res://Heads/1x/Asset 51.png" type="Texture" id=21]
+[ext_resource path="res://Heads/1x/Asset 44.png" type="Texture" id=22]
+[ext_resource path="res://Heads/1x/Asset 50.png" type="Texture" id=23]
+[ext_resource path="res://Heads/1x/Asset 43.png" type="Texture" id=24]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00013.png" type="Texture" id=25]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00002.png" type="Texture" id=26]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00018.png" type="Texture" id=27]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00016.png" type="Texture" id=28]
+[ext_resource path="res://Heads/1x/Asset 49.png" type="Texture" id=29]
+[ext_resource path="res://Heads/1x/Asset 46.png" type="Texture" id=30]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00010.png" type="Texture" id=31]
+[ext_resource path="res://Heads/1x/Asset 47.png" type="Texture" id=32]
+[ext_resource path="res://Heads/1x/Asset 45.png" type="Texture" id=33]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00017.png" type="Texture" id=34]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00023.png" type="Texture" id=35]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00012.png" type="Texture" id=36]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00001.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Music/Main menu - loop.ogg" type="AudioStream" id=38]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00029.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Music/Main menu - Intro.ogg" type="AudioStream" id=40]
+[ext_resource path="res://Assets/MenuScreen/Character/Character_00004.png" type="Texture" id=41]
+[ext_resource path="res://Game.gd" type="Script" id=42]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 82.4844
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 37 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 41 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 31 ), ExtResource( 13 ), ExtResource( 36 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 4 ), ExtResource( 28 ), ExtResource( 34 ), ExtResource( 27 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 19 ), ExtResource( 35 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "default",
+"speed": 25.0
+} ]
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 14.1705
+[sub_resource type="StyleBoxEmpty" id=2]
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 29.5307
+[sub_resource type="StyleBoxEmpty" id=3]
 
-[sub_resource type="StyleBoxFlat" id=4]
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="StyleBoxEmpty" id=4]
 
-[sub_resource type="DynamicFont" id=5]
-size = 34
-font_data = ExtResource( 7 )
+[sub_resource type="StyleBoxEmpty" id=5]
 
-[node name="Game" type="Node"]
-script = ExtResource( 8 )
+[sub_resource type="StyleBoxEmpty" id=6]
 
-[node name="RoadChunk" type="Node2D" parent="."]
-position = Vector2( 761.481, 991.133 )
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.537255, 0.545098, 0.54902, 0.537255 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
-[node name="Road" type="Sprite" parent="RoadChunk"]
-texture = ExtResource( 6 )
+[node name="GameMenu" type="Node"]
+script = ExtResource( 42 )
 
-[node name="Road2" type="Sprite" parent="RoadChunk"]
-position = Vector2( 7.21667, -586.307 )
-rotation = -3.14159
-texture = ExtResource( 6 )
-
-[node name="RoadChunk2" type="Node2D" parent="."]
-position = Vector2( 768, -704 )
-rotation = 3.14159
-
-[node name="Road" type="Sprite" parent="RoadChunk2"]
-texture = ExtResource( 6 )
-
-[node name="Road2" type="Sprite" parent="RoadChunk2"]
-position = Vector2( 7.21667, -586.307 )
-rotation = -3.14159
-texture = ExtResource( 6 )
-
-[node name="Camera" parent="." instance=ExtResource( 2 )]
-position = Vector2( 472.415, 468.266 )
-draw_angle_to = 130
-draw_dir = 1
-default_draw_speed = 5
-
-[node name="Sprite" type="Sprite" parent="Camera"]
-position = Vector2( 0, -1.2923 )
-texture = ExtResource( 5 )
-
-[node name="Camera2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 476.292, 297.675 )
-draw_angle_to = 130
-default_draw_speed = 5
-
-[node name="Sprite" type="Sprite" parent="Camera2"]
-position = Vector2( 0, -1.2923 )
-texture = ExtResource( 5 )
-
-[node name="building" type="Sprite" parent="."]
-position = Vector2( 217.613, 295.073 )
-texture = ExtResource( 4 )
-
-[node name="building2" type="Sprite" parent="."]
-position = Vector2( 215.221, 982.582 )
-texture = ExtResource( 4 )
-
-[node name="building3" type="Sprite" parent="."]
-position = Vector2( 1289.08, 994.541 )
-texture = ExtResource( 4 )
-
-[node name="building4" type="Sprite" parent="."]
-position = Vector2( 1279.51, 312.917 )
-texture = ExtResource( 4 )
-
-[node name="Enemy" type="Node2D" parent="."]
-script = ExtResource( 11 )
-time_hours = 1
-time_minutes = 12
-
-[node name="Sprite" type="Sprite" parent="Enemy"]
-position = Vector2( 925.509, 182.307 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 9 )
-
-[node name="Area2D" type="Area2D" parent="Enemy/Sprite"]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Sprite/Area2D"]
-shape = SubResource( 1 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 656.534, 322.913 )
-SPEED = 500
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="Player"]
-texture = ExtResource( 3 )
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( -1, 0 )
-current = true
-zoom = Vector2( 1.5, 1.5 )
-smoothing_enabled = true
-
-[node name="Area2D" type="Area2D" parent="Player"]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
-shape = SubResource( 3 )
-
-[node name="GrabIndicator" parent="Player" instance=ExtResource( 10 )]
-visible = false
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="UI" type="Control" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -300.0
-margin_bottom = 70.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_right = 5
-custom_constants/margin_top = 5
-custom_constants/margin_left = 5
-custom_constants/margin_bottom = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="PanelContainer" parent="CanvasLayer/UI/MarginContainer"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 295.0
-margin_bottom = 65.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = SubResource( 4 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 519.992, 303.186 )
+frames = SubResource( 1 )
+frame = 10
+playing = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
-[node name="PlayerTime" type="Label" parent="CanvasLayer/UI/MarginContainer/Panel"]
-margin_top = 9.0
-margin_right = 290.0
-margin_bottom = 51.0
-custom_fonts/font = SubResource( 5 )
-text = "11:11:11:11"
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="StartButton" type="Button" parent="CanvasLayer"]
+margin_left = 402.0
+margin_top = 445.0
+margin_right = 519.0
+margin_bottom = 500.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/StartButton"]
+visible = false
+anchor_left = 0.0110606
+anchor_right = 0.984
+anchor_bottom = 1.0
+margin_left = -2.66266
+margin_top = -2.461
+margin_right = 0.052124
+margin_bottom = 1.38396
+text = "START"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="Timer" type="Timer" parent="."]
-[connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Player/Area2D" to="Player" method="_on_Area2D_area_exited"]
+[node name="MusicIntro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 40 )
+
+[node name="MusicLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 38 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 790.772
+margin_top = 430.711
+margin_right = 977.772
+margin_bottom = 444.711
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Heads" type="Node2D" parent="."]
+position = Vector2( 888.42, 283.887 )
+rotation = -0.385999
+scale = Vector2( 0.385004, 0.385004 )
+
+[node name="Asset 43" type="Sprite" parent="Heads"]
+texture = ExtResource( 24 )
+
+[node name="Asset 44" type="Sprite" parent="Heads"]
+position = Vector2( 43.0967, 126.621 )
+texture = ExtResource( 22 )
+
+[node name="Asset 45" type="Sprite" parent="Heads"]
+position = Vector2( -90.7943, 98.954 )
+rotation = 1.11901
+texture = ExtResource( 33 )
+
+[node name="Asset 46" type="Sprite" parent="Heads"]
+position = Vector2( 38.3046, 264.955 )
+rotation = 0.298725
+texture = ExtResource( 30 )
+
+[node name="Asset 47" type="Sprite" parent="Heads"]
+position = Vector2( -62.8311, 215.528 )
+rotation = -0.397956
+texture = ExtResource( 32 )
+
+[node name="Asset 48" type="Sprite" parent="Heads"]
+position = Vector2( -193.682, 164.065 )
+rotation = 1.76807
+texture = ExtResource( 18 )
+
+[node name="Asset 49" type="Sprite" parent="Heads"]
+position = Vector2( -25.676, 367.014 )
+rotation = -1.16943
+texture = ExtResource( 29 )
+
+[node name="Asset 50" type="Sprite" parent="Heads"]
+position = Vector2( -149.751, 302.38 )
+rotation = -0.963921
+texture = ExtResource( 23 )
+
+[node name="Asset 51" type="Sprite" parent="Heads"]
+position = Vector2( -265.212, 265.252 )
+rotation = -1.20264
+texture = ExtResource( 21 )
+[connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_Button_pressed"]
+[connection signal="finished" from="MusicIntro" to="." method="_on_MusicIntro_finished"]
+[connection signal="finished" from="MusicLoop" to="." method="_on_MusicLoop_finished"]

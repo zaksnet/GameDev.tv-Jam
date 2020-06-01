@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/00 - boss hit the ground - boss rumble.ogg-bdbd4a82408879d41e2994f03da64603.oggstr"
+
+[deps]
+
+source_file="res://Assets/Boss/boss hit the ground/00 - boss hit the ground - boss rumble.ogg"
+dest_files=[ "res://.import/00 - boss hit the ground - boss rumble.ogg-bdbd4a82408879d41e2994f03da64603.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

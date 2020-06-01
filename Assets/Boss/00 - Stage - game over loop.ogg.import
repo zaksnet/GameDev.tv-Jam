@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/00 - Stage - game over loop.ogg-298f80883997a0da1025bae386ce16fd.oggstr"
+
+[deps]
+
+source_file="res://Assets/Boss/00 - Stage - game over loop.ogg"
+dest_files=[ "res://.import/00 - Stage - game over loop.ogg-298f80883997a0da1025bae386ce16fd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

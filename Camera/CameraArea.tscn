@@ -1,8 +1,0 @@
-[gd_scene format=2]
-
-[node name="Area2D" type="Area2D"]
-rotation = 1.89777
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-rotation = -0.877901
-polygon = PoolVector2Array( 2.53258, -3.44354, 114.633, -97.4937, 144.083, -44.2936, 149.783, 12.7065, 140.283, 51.6565 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/00 - Stage - Music Level Master.ogg-356983ab3a0e7121c1d3bd9c2420f525.oggstr"
+
+[deps]
+
+source_file="res://Assets/Boss/00 - Stage - Music Level Master.ogg"
+dest_files=[ "res://.import/00 - Stage - Music Level Master.ogg-356983ab3a0e7121c1d3bd9c2420f525.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
