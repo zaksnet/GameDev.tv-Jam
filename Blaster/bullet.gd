@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var speed = 750
-var explosion = preload("res://Explosion.tscn")
+var explosion = preload("res://Blaster/Explosion.tscn")
 var damage = 30
 var charge_level = 1
 var velocity = Vector2()

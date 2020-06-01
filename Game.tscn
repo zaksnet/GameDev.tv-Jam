@@ -81,7 +81,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 519.992, 303.186 )
 frames = SubResource( 1 )
-frame = 10
+frame = 29
 playing = true
 __meta__ = {
 "_edit_group_": true,
