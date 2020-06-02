@@ -1,7 +1,9 @@
 extends Node
-onready var zombie = preload("res://Zombie/Enemy.tscn")
-onready var grass = preload("res://Grass/Grass.tscn")
+var zombie = preload("res://Scenes/Zombie/Enemy.tscn")
+var grass = preload("res://Scenes/Grass/Grass.tscn")
 var game_over_time: float = 300
+
+# Game play code should not be in this script file...
 
 func _ready():
 	$Boss.connect("spawn_zombies", self, "spawn_zombies")

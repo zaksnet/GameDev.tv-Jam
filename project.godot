@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://Zombie/Enemy.gd"
+"path": "res://Scenes/Zombie/Enemy.gd"
 }, {
 "base": "Node",
 "class": "FSM",
@@ -46,6 +46,10 @@ _global_script_class_icons={
 
 config/name="Zombies"
 run/main_scene="res://Game.tscn"
+
+[autoload]
+
+ResourceManager="*res://Singletons/resourceManager.gd"
 
 [editor_plugins]
 

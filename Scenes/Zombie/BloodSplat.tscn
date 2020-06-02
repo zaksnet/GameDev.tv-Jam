@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Zombie/BloodSplat.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Zombie/BloodSplat.gd" type="Script" id=1]
 
 [node name="BloodSplat" type="CPUParticles2D"]
 position = Vector2( -3.15466, -0.996155 )

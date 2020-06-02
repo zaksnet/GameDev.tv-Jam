@@ -11,8 +11,8 @@ var init_state = ""
 var speed = 200
 
 onready var playerNode = get_node("/root/Level1/Player")
-onready var bloodSplat = preload("res://Zombie/BloodSplat.tscn")
-onready var zombieDieExplosion = preload("res://Zombie/ZombieExplosion.tscn")
+onready var bloodSplat = preload("res://Scenes/Zombie/BloodSplat.tscn")
+onready var zombieDieExplosion = preload("res://Scenes/Zombie/ZombieExplosion.tscn")
 
 var velocity = Vector2()
 
