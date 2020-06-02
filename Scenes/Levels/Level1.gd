@@ -14,7 +14,8 @@ func _ready():
 	reset_hearts()
 	generate_grass()
 	$StageMusic.play()
-	
+
+
 func generate_grass():
 	# Generates random grass
 	var map_range = Vector2(10000, -10000)
@@ -26,13 +27,22 @@ func generate_grass():
 		inst.position.x = rand_range(map_range.x, map_range.y)
 		inst.position.y = rand_range(map_range.x, map_range.y)
 		$YSort.add_child(inst)
-	
+
+
 func win():
 	$UI/GameOverScreen/HBoxContainer/GameOverLabel.text = "To be continued..."
 	game_over()
-	
+
+
+func game_over():
+	get_tree().paused = true
+	$UI/GameOverScreen/GameOverMusic.play()
+	$UI/GameOverScreen.visible = true
+
+
 func camera_shake():
 	$Player/Camera2D.shake(1, 10, 10)
+
 
 func _input(event):
 
@@ -69,9 +79,11 @@ func _input(event):
 	if event.is_action_released("ui_down"):
 		$UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Bottom.pressed = false
 
+
 func _process(delta):
 	check_player_health()
-	
+
+
 func check_player_health():
 	var playerLife = $Player.life
 	$UI/MarginContainer2/HBoxContainer/Heart1.modulate = Color(1, 1, 1, 1) if playerLife > 2 else Color(0, 0, 0, 1)
@@ -79,17 +91,14 @@ func check_player_health():
 	
 	if playerLife <= 0:
 		game_over()
-		
-func game_over():
-	get_tree().paused = true
-	$UI/GameOverScreen/GameOverMusic.play()
-	$UI/GameOverScreen.visible = true
-	
+
+
 func reset_hearts():
 	$UI/MarginContainer2/HBoxContainer/Heart1.modulate = Color(1, 1, 1, 1)
 	$UI/MarginContainer2/HBoxContainer/Heart2.modulate = Color(1, 1, 1, 1)
 	$UI/MarginContainer2/HBoxContainer/Heart3.modulate = Color(1, 1, 1, 1)
-	
+
+
 func spawn_zombies():
 	var grp = get_node("Zombies")
 	var player = get_node("Player")
@@ -101,8 +110,8 @@ func spawn_zombies():
 		inst.position.x = rand_range(player_pos.x - 500, player_pos.x + 500)
 		inst.position.y = rand_range(player_pos.y - 500, player_pos.y + 500)
 		grp.add_child(inst)
-		
-		
+
+
 func get_seconds(num):
 	var whole = floor(num)
 	var dec = num - whole

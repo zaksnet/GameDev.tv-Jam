@@ -1,5 +1,10 @@
 extends Node
 
+# TODO: QOL improvements (propably never going to happend. Unless there is enough interest xD)
+# - Apply single responsibility principle
+# - Use a better weapon system base on a state machine so that it is easily expandable
+# - Add more tiles
+# - Add more animations for the player/zombies
 
 func _ready():
 	$MusicIntro.play()
