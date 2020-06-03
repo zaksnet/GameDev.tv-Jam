@@ -8,6 +8,10 @@ extends Node
 
 func _ready():
 	$MusicIntro.play()
+	$Node2D/Loop.visible = false
+	$Node2D/Main.frame = 0
+	$Node2D/Main.visible = true
+	$Node2D/Main.play()
 	pass
 
 func _on_MusicIntro_finished():
@@ -17,3 +21,15 @@ func _on_Button_pressed():
 	$MusicLoop.stop()
 	$MusicIntro.stop()
 	get_tree().change_scene_to(ResourceManager.level1)
+
+
+func _on_Main_animation_finished():
+	$Node2D/Main.visible = false
+	$Node2D/Loop.frame = 0
+	$Node2D/Loop.visible = true
+	$Node2D/Loop.play()
+
+
+func _on_Main_frame_changed():
+	if $Node2D/Main.frame == 70:
+		$BossGrowl.play()
