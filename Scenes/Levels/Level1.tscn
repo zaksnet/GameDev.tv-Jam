@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=2]
+[gd_scene load_steps=143 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Zombie/Enemy.tscn" type="PackedScene" id=2]
@@ -123,6 +123,7 @@
 [ext_resource path="res://Tiles/Fence.tscn" type="PackedScene" id=121]
 [ext_resource path="res://Assets/Herb.svg" type="Texture" id=122]
 [ext_resource path="res://Scenes/Grass/Grass.tscn" type="PackedScene" id=123]
+[ext_resource path="res://UI/Burnout.gd" type="Script" id=124]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 10 )
@@ -137,15 +138,15 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 44 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 45 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 69 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 57 ), ExtResource( 56 ), ExtResource( 59 ), ExtResource( 58 ), ExtResource( 52 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 54 ) ],
 "loop": true,
 "name": "Attack",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 45 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 81 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 89 ), ExtResource( 93 ), ExtResource( 88 ), ExtResource( 90 ), ExtResource( 80 ), ExtResource( 105 ), ExtResource( 96 ), ExtResource( 104 ), ExtResource( 97 ), ExtResource( 95 ), ExtResource( 107 ), ExtResource( 106 ), ExtResource( 108 ), ExtResource( 100 ), ExtResource( 98 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 94 ), ExtResource( 71 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 78 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 79 ) ],
 "loop": true,
@@ -220,6 +221,13 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.12549, 0.133333, 0.141176, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="Shader" id=13]
 code = "shader_type canvas_item;
 
@@ -273,20 +281,20 @@ volume_db = -30.0
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Grass" parent="YSort" instance=ExtResource( 123 )]
-frame = 11
+frame = 1
 
 [node name="Grass2" type="AnimatedSprite" parent="YSort"]
 position = Vector2( -172, 189 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 2 )
-frame = 12
+frame = 2
 playing = true
 
 [node name="Grass3" type="AnimatedSprite" parent="YSort"]
 position = Vector2( 159, 187 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2 )
-frame = 11
+frame = 1
 playing = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -353,7 +361,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Boss"]
 frames = SubResource( 3 )
 animation = "WakeUp"
-frame = 30
+frame = 28
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boss"]
@@ -573,15 +581,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer2"]
 margin_top = 10.0
 margin_right = 113.0
-margin_bottom = 42.0
+margin_bottom = 71.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer2/VBoxContainer"]
+margin_right = 113.0
+margin_bottom = 32.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Heart1" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer"]
+[node name="Heart1" type="TextureRect" parent="UI/MarginContainer2/VBoxContainer/HBoxContainer"]
 margin_right = 35.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 35, 32 )
@@ -591,7 +603,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Heart2" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer"]
+[node name="Heart2" type="TextureRect" parent="UI/MarginContainer2/VBoxContainer/HBoxContainer"]
 margin_left = 39.0
 margin_right = 74.0
 margin_bottom = 32.0
@@ -602,7 +614,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Heart3" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer"]
+[node name="Heart3" type="TextureRect" parent="UI/MarginContainer2/VBoxContainer/HBoxContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_left = 78.0
 margin_right = 113.0
@@ -613,6 +625,29 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Burnout" type="MarginContainer" parent="UI/MarginContainer2/VBoxContainer"]
+margin_top = 36.0
+margin_right = 113.0
+margin_bottom = 61.0
+custom_constants/margin_top = 5
+script = ExtResource( 124 )
+
+[node name="Overburn" type="Panel" parent="UI/MarginContainer2/VBoxContainer/Burnout"]
+margin_top = 5.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 0
+custom_styles/panel = SubResource( 18 )
+
+[node name="OverburnLabel" type="Label" parent="UI/MarginContainer2/VBoxContainer/Burnout"]
+margin_top = 8.0
+margin_right = 113.0
+margin_bottom = 22.0
+text = "OVERBURN"
+align = 1
+
+[node name="Timer" type="Timer" parent="UI/MarginContainer2/VBoxContainer/Burnout"]
 
 [node name="GameOverScreen" type="PanelContainer" parent="UI"]
 pause_mode = 2
@@ -708,5 +743,6 @@ format = 1
 [connection signal="body_entered" from="Herb/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Boss/Area2D" to="Boss/FSM/Sleeping" method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Boss/Timer" to="Boss/FSM/Idle" method="_on_Timer_timeout"]
+[connection signal="timeout" from="UI/MarginContainer2/VBoxContainer/Burnout/Timer" to="UI/MarginContainer2/VBoxContainer/Burnout" method="_on_Timer_timeout"]
 [connection signal="pressed" from="UI/GameOverScreen/HBoxContainer/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]

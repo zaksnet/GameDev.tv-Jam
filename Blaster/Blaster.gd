@@ -6,12 +6,18 @@ var plasma_charge = preload("res://Blaster/PlasmaCharge.tscn")
 var active = false
 var active_charge
 var charge_level
+var overcharge = 100
+var charging = false
 
 func _ready():
 	pass # Replace with function body.
 	
 func shoot():
-	# "Muzzle" is a Position2D placed at the barrel of the gun.
+	if overcharge < 0 or charging:
+		charging = true
+		return
+		
+	overcharge -= 10
 	var b = Bullet.instance()
 	var rot = rotation
 	var pos = $BulletPoint.global_position
@@ -25,7 +31,14 @@ func shoot():
 
 func _physics_process(delta):
 	var pos = get_global_mouse_position()
-
+	
+	if overcharge < 100:
+		overcharge += 15 * delta
+	#print(overcharge)
+	
+	if charging and overcharge >= 100:
+		charging = false
+	
 	look_at(pos)
 	if rotation_degrees > 360:
 		rotation_degrees = 0
@@ -39,7 +52,7 @@ func _physics_process(delta):
 		flip_v = false
 		
 		
-	if Input.is_action_just_pressed('attack') and !Input.is_action_pressed("Sprint"):
+	if Input.is_action_just_pressed('attack') and !Input.is_action_pressed("Sprint") and not charging:
 
 		active_charge = plasma_charge.instance()
 		active_charge.position = $BulletPoint.position

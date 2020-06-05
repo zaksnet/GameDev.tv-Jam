@@ -107,7 +107,7 @@ func die():
 func push_back(rot):
 	#look_at(playerNode.position)
 	
-	velocity = Vector2(1000,  0).rotated(rot)
+	velocity = Vector2(3000,  0).rotated(rot)
 	velocity = move_and_slide(velocity)
 
 

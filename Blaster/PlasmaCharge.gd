@@ -1,7 +1,7 @@
 extends Node2D
 
 var charging_timer = 5
-var charge_level = 0
+var charge_level: int = 0
 
 func _ready():
 	$Timer.start(charging_timer)

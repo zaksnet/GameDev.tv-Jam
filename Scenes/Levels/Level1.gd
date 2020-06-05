@@ -3,9 +3,13 @@ var zombie = preload("res://Scenes/Zombie/Enemy.tscn")
 var grass = preload("res://Scenes/Grass/Grass.tscn")
 var game_over_time: float = 300
 
-# Game play code should not be in this script file...
+onready var overburn = $UI/MarginContainer2/VBoxContainer/MarginContainer/Overburn
+onready var overburn_style = StyleBoxFlat.new()
+
+# Game play code should not be in this file...
 
 func _ready():
+	set_overburn_style()
 	$Boss.connect("spawn_zombies", self, "spawn_zombies")
 	$Player.connect("damage_taken", self, "check_player_health")
 	$Boss.connect("camera_shake", self, "camera_shake")
@@ -14,6 +18,14 @@ func _ready():
 	reset_hearts()
 	generate_grass()
 	$StageMusic.play()
+	
+func set_overburn_style():
+	overburn_style.bg_color = Color(0, 100, 0)
+	overburn_style.corner_radius_bottom_left = 5
+	overburn_style.corner_radius_bottom_right = 5
+	overburn_style.corner_radius_top_left = 5
+	overburn_style.corner_radius_top_right = 5
+	overburn.add_stylebox_override("panel", overburn_style)
 
 
 func generate_grass():
@@ -83,20 +95,34 @@ func _input(event):
 func _process(delta):
 	check_player_health()
 
+	var overburn_level = $Player/Blaster.overcharge
+	var charging  = $Player/Blaster.charging
+
+	# TODO: Replace static width
+	var width = 115 * overburn_level / 100
+	if width < 0:
+		width = 0
+	overburn.rect_size.x = width
+	if charging:
+		overburn_style.bg_color = Color(0.5, 0.1, 0.1)
+		$UI/MarginContainer2/VBoxContainer/MarginContainer/OverburnLabel.visible = true
+	else:
+		overburn_style.bg_color = Color(0.1, 0.5, 0.1)
+		$UI/MarginContainer2/VBoxContainer/MarginContainer/OverburnLabel.visible = false
 
 func check_player_health():
 	var playerLife = $Player.life
-	$UI/MarginContainer2/HBoxContainer/Heart1.modulate = Color(1, 1, 1, 1) if playerLife > 2 else Color(0, 0, 0, 1)
-	$UI/MarginContainer2/HBoxContainer/Heart2.modulate = Color(1, 1, 1, 1) if playerLife > 1 else Color(0, 0, 0, 1)
+	$UI/MarginContainer2/VBoxContainer/HBoxContainer/Heart1.modulate = Color(1, 1, 1, 1) if playerLife > 2 else Color(0, 0, 0, 1)
+	$UI/MarginContainer2/VBoxContainer/HBoxContainer/Heart2.modulate = Color(1, 1, 1, 1) if playerLife > 1 else Color(0, 0, 0, 1)
 	
 	if playerLife <= 0:
 		game_over()
 
 
 func reset_hearts():
-	$UI/MarginContainer2/HBoxContainer/Heart1.modulate = Color(1, 1, 1, 1)
-	$UI/MarginContainer2/HBoxContainer/Heart2.modulate = Color(1, 1, 1, 1)
-	$UI/MarginContainer2/HBoxContainer/Heart3.modulate = Color(1, 1, 1, 1)
+	$UI/MarginContainer2/VBoxContainer/HBoxContainer/Heart1.modulate = Color(1, 1, 1, 1)
+	$UI/MarginContainer2/VBoxContainer/HBoxContainer/Heart2.modulate = Color(1, 1, 1, 1)
+	$UI/MarginContainer2/VBoxContainer/HBoxContainer/Heart3.modulate = Color(1, 1, 1, 1)
 
 
 func spawn_zombies():

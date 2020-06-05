@@ -13,12 +13,18 @@ func start(pos, dir):
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
-
+	
 	if collision and collision.collider.name != "Player":
+		# Make sure we only collide once with the same object
+		add_collision_exception_with(collision.collider)
+		
 		var inst = explosion.instance()
 		inst.global_position = global_position
 		collision.collider.get_parent().add_child(inst)
-		queue_free()
+		if charge_level <= 1:
+			queue_free()
+		else:
+			charge_level -= 1
 #		velocity = velocity.bounce(collision.normal)
 		if collision.collider.has_method("take_damage"):
 			collision.collider.take_damage(rotation, damage)
