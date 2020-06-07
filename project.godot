@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/node_fsm_plugin/fsm_node.gd"
 }, {
+"base": "Sprite",
+"class": "PlasmaCannon",
+"language": "GDScript",
+"path": "res://Weapons/PlasmaCannon/PlasmaCannon.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -33,13 +38,20 @@ _global_script_classes=[ {
 "class": "State",
 "language": "GDScript",
 "path": "res://addons/node_fsm_plugin/state_node.gd"
+}, {
+"base": "Node",
+"class": "WeaponsService",
+"language": "GDScript",
+"path": "res://Weapons.gd"
 } ]
 _global_script_class_icons={
 "Boss": "",
 "Enemy": "",
 "FSM": "res://addons/node_fsm_plugin/fsm_icon.svg",
+"PlasmaCannon": "",
 "Player": "",
-"State": "res://addons/node_fsm_plugin/state_icon.svg"
+"State": "res://addons/node_fsm_plugin/state_icon.svg",
+"WeaponsService": ""
 }
 
 [application]
@@ -50,6 +62,7 @@ run/main_scene="res://Game.tscn"
 [autoload]
 
 ResourceManager="*res://Singletons/resourceManager.gd"
+WeaponResources="*res://Singletons/WeaponResources.gd"
 
 [editor_plugins]
 
@@ -103,6 +116,11 @@ zoom_out={
 Sprint={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
+ ]
+}
+test={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 

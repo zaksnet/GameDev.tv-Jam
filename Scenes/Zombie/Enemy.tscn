@@ -24,14 +24,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 19 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Chase",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 8.0
 } ]
 
@@ -73,7 +73,6 @@ __meta__ = {
 
 [node name="FSM" type="Node" parent="."]
 script = ExtResource( 1 )
-active = true
 initial_state = "Idle"
 target = NodePath("..")
 

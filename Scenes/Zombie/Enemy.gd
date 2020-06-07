@@ -10,7 +10,7 @@ var init_state = ""
 
 var speed = 200
 
-onready var playerNode = get_node("/root/Level1/Player")
+var playerNode: Player
 onready var bloodSplat = preload("res://Scenes/Zombie/BloodSplat.tscn")
 onready var zombieDieExplosion = preload("res://Scenes/Zombie/ZombieExplosion.tscn")
 
@@ -74,9 +74,11 @@ func take_damage(rot, dmg):
 	$Tween.start()
 	
 	blood_splat(rot)
-	took_damage = rot
 	health -= dmg
 	check_health()
+	play_growl()
+	took_damage = rot
+	$FSM.go_to("PushBack")
 	
 func blood_splat(rot):
 	var inst = bloodSplat.instance()
@@ -107,7 +109,7 @@ func die():
 func push_back(rot):
 	#look_at(playerNode.position)
 	
-	velocity = Vector2(3000,  0).rotated(rot)
+	velocity = Vector2(1000,  0).rotated(rot)
 	velocity = move_and_slide(velocity)
 
 
@@ -122,6 +124,9 @@ func move_and_attack(delta):
 		if col and col.collider.name == "Player":
 			if can_attack:
 				attack()
+	else:
+		if can_attack:
+			attack()
 #	else:
 #		if can_attack:
 #			attack()

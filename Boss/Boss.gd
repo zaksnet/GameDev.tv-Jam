@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 class_name Boss
 # TODO: Super hacky, bad practice
-onready var player: Player = get_node("/root/Level1/Player")
 var health = 3000
 # Bad practice, not scalelable. This should propably be different for each weapon.
 signal animation_finished

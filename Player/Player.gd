@@ -10,28 +10,25 @@ signal damage_taken
 
 var velocity = Vector2()
 
-func _ready():
-	$Blaster.active = true
+func camera_shake(duration, frequency, amplitude):
+	$Camera2D.shake(duration, frequency, amplitude)
 
 func take_damage():
 	$Tween.interpolate_property($AnimatedSprite, "modulate", Color(1, 0, 0), Color(1, 1, 1), 1, Tween.TRANS_SINE, Tween.EASE_OUT)
 	$Tween.start()
 	life -= 1
-	emit_signal("damage_taken")
+	emit_signal("damage_taken", life)
 
 func get_input():
 	velocity = Vector2()
 	sprint = false
 	var run_speed = speed
 	# TODO: hacky, bad practice. Propably a waste of resources. Should instead use states
-	$Blaster.visible = true
 	
 
 	if Input.is_action_pressed("Sprint"):
 		run_speed = speed * 2
 		sprint = true
-		
-		
 		
 	if Input.is_action_pressed('ui_right'):
 		#$AnimatedSprite.flip_h = true
@@ -54,7 +51,6 @@ func get_input():
 			else:
 				$AnimatedSprite.play("run", $AnimatedSprite.flip_h)
 		else:
-			$Blaster.visible = false
 			if Input.is_action_pressed('ui_right'):
 				$AnimatedSprite.play("sprint", !$AnimatedSprite.flip_h)
 			else:
@@ -64,16 +60,16 @@ func get_input():
 	else:
 		$AnimatedSprite.play("idle")
 
+func set_flip_h(pValue):
+	$AnimatedSprite.flip_h = pValue
 
 func _physics_process(delta):
-	$AnimatedSprite.flip_h = !$Blaster.flip_v
 
 	get_input()
 	velocity = move_and_slide(velocity)
-
-
-
-
+	
+	
+	
 var footsteps = [
 	preload("res://Assets/Footsteps/sfx_playerfootsteps_01.mp3.wav"),
 	preload("res://Assets/Footsteps/sfx_playerfootsteps_02.mp3.wav"),

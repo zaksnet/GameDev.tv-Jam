@@ -20,7 +20,7 @@ func _on_MusicIntro_finished():
 func _on_Button_pressed():
 	$MusicLoop.stop()
 	$MusicIntro.stop()
-	get_tree().change_scene_to(ResourceManager.level1)
+	get_tree().change_scene_to(ResourceManager.mainScene)
 
 
 func _on_Main_animation_finished():

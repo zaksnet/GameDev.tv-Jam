@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
+onready var explosion = ResourceManager.explosion
+
 var speed = 750
-var explosion = preload("res://Blaster/Explosion.tscn")
 var damage = 30
 var charge_level = 1
 var velocity = Vector2()
@@ -13,8 +14,10 @@ func start(pos, dir):
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
-	
+
 	if collision and collision.collider.name != "Player":
+		var collider = collision.collider
+		var collider_name = collision.collider.name
 		# Make sure we only collide once with the same object
 		add_collision_exception_with(collision.collider)
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=232 format=2]
+[gd_scene load_steps=228 format=2]
 
 [ext_resource path="res://Assets/MenuIntro/Loop/Loop_00158.png" type="Texture" id=1]
 [ext_resource path="res://Assets/MenuIntro/Loop/Loop_00160.png" type="Texture" id=2]
@@ -224,22 +224,14 @@
 [ext_resource path="res://Assets/MenuIntro/Loop/Loop_00209.png" type="Texture" id=222]
 [ext_resource path="res://Assets/Boss/boss zombie growl/00 - boss zombie growl - sfx zombiegrowl 01.ogg" type="AudioStream" id=223]
 
-[sub_resource type="StyleBoxEmpty" id=1]
-
-[sub_resource type="StyleBoxEmpty" id=2]
-
-[sub_resource type="StyleBoxEmpty" id=3]
-
-[sub_resource type="StyleBoxEmpty" id=4]
-
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.129412, 0.133333, 0.141176, 1 )
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 39 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 69 ), ExtResource( 57 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 67 ), ExtResource( 50 ), ExtResource( 54 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 66 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 47 ), ExtResource( 68 ), ExtResource( 44 ), ExtResource( 48 ), ExtResource( 43 ), ExtResource( 64 ), ExtResource( 56 ), ExtResource( 73 ), ExtResource( 45 ), ExtResource( 63 ), ExtResource( 46 ), ExtResource( 51 ), ExtResource( 70 ), ExtResource( 55 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 58 ), ExtResource( 60 ), ExtResource( 65 ), ExtResource( 61 ), ExtResource( 81 ), ExtResource( 95 ), ExtResource( 84 ), ExtResource( 99 ), ExtResource( 91 ), ExtResource( 103 ), ExtResource( 102 ), ExtResource( 88 ), ExtResource( 86 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 101 ), ExtResource( 92 ), ExtResource( 78 ), ExtResource( 89 ), ExtResource( 79 ), ExtResource( 74 ), ExtResource( 90 ), ExtResource( 80 ), ExtResource( 100 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 98 ), ExtResource( 83 ), ExtResource( 85 ), ExtResource( 97 ), ExtResource( 82 ), ExtResource( 93 ), ExtResource( 87 ), ExtResource( 94 ), ExtResource( 96 ), ExtResource( 75 ), ExtResource( 113 ), ExtResource( 137 ), ExtResource( 121 ), ExtResource( 128 ), ExtResource( 119 ), ExtResource( 125 ), ExtResource( 112 ), ExtResource( 123 ), ExtResource( 110 ), ExtResource( 138 ), ExtResource( 106 ), ExtResource( 129 ), ExtResource( 135 ), ExtResource( 114 ), ExtResource( 107 ), ExtResource( 111 ), ExtResource( 116 ), ExtResource( 115 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 108 ), ExtResource( 127 ), ExtResource( 132 ), ExtResource( 122 ), ExtResource( 126 ), ExtResource( 120 ), ExtResource( 124 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 134 ), ExtResource( 136 ), ExtResource( 109 ), ExtResource( 143 ), ExtResource( 155 ), ExtResource( 147 ), ExtResource( 154 ), ExtResource( 140 ), ExtResource( 153 ), ExtResource( 165 ), ExtResource( 144 ), ExtResource( 157 ), ExtResource( 162 ), ExtResource( 160 ), ExtResource( 141 ), ExtResource( 156 ), ExtResource( 152 ), ExtResource( 158 ), ExtResource( 164 ), ExtResource( 163 ), ExtResource( 149 ), ExtResource( 159 ), ExtResource( 161 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 145 ), ExtResource( 146 ), ExtResource( 168 ), ExtResource( 169 ), ExtResource( 148 ), ExtResource( 142 ), ExtResource( 170 ), ExtResource( 139 ), ExtResource( 150 ), ExtResource( 151 ), ExtResource( 174 ), ExtResource( 173 ), ExtResource( 175 ), ExtResource( 181 ), ExtResource( 178 ), ExtResource( 177 ), ExtResource( 183 ), ExtResource( 182 ), ExtResource( 176 ), ExtResource( 184 ), ExtResource( 180 ), ExtResource( 179 ), ExtResource( 172 ), ExtResource( 171 ) ],
 "loop": false,
@@ -247,7 +239,7 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 1 ), ExtResource( 15 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 20 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 133 ), ExtResource( 204 ), ExtResource( 208 ), ExtResource( 192 ), ExtResource( 206 ), ExtResource( 193 ), ExtResource( 187 ), ExtResource( 209 ), ExtResource( 197 ), ExtResource( 212 ), ExtResource( 213 ), ExtResource( 198 ), ExtResource( 196 ), ExtResource( 191 ), ExtResource( 202 ), ExtResource( 211 ), ExtResource( 214 ), ExtResource( 194 ), ExtResource( 210 ), ExtResource( 203 ), ExtResource( 190 ), ExtResource( 216 ), ExtResource( 185 ), ExtResource( 205 ), ExtResource( 207 ), ExtResource( 186 ), ExtResource( 215 ), ExtResource( 188 ), ExtResource( 189 ), ExtResource( 195 ), ExtResource( 199 ), ExtResource( 200 ), ExtResource( 201 ), ExtResource( 218 ), ExtResource( 217 ), ExtResource( 219 ), ExtResource( 221 ), ExtResource( 220 ), ExtResource( 222 ) ],
 "loop": true,
@@ -255,7 +247,7 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.537255, 0.545098, 0.54902, 0.537255 )
 corner_radius_top_left = 20
 corner_radius_top_right = 20
@@ -291,11 +283,12 @@ margin_left = 367.623
 margin_top = 472.01
 margin_right = 484.623
 margin_bottom = 527.01
+mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "START"
@@ -329,7 +322,7 @@ stream = ExtResource( 38 )
 
 [node name="Main" type="AnimatedSprite" parent="Node2D"]
 position = Vector2( 519.992, 303.186 )
-frames = SubResource( 6 )
+frames = SubResource( 2 )
 frame = 136
 __meta__ = {
 "_edit_group_": true
@@ -338,8 +331,8 @@ __meta__ = {
 [node name="Loop" type="AnimatedSprite" parent="Node2D"]
 visible = false
 position = Vector2( 519.992, 303.186 )
-frames = SubResource( 7 )
-frame = 24
+frames = SubResource( 3 )
+frame = 27
 playing = true
 
 [node name="Panel" type="Panel" parent="Node2D"]
@@ -347,7 +340,7 @@ margin_left = 790.772
 margin_top = 430.711
 margin_right = 977.772
 margin_bottom = 444.711
-custom_styles/panel = SubResource( 8 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
