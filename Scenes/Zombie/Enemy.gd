@@ -61,6 +61,12 @@ func _ready():
 	if init_state != "":
 		$FSM.go_to(init_state)
 		
+	if $VisibilityNotifier2D.is_on_screen():
+		$FSM.set_active(true)
+	else:
+		$FSM.set_active(false)
+		
+		
 	check_health()
 	set_speed()
 	
@@ -138,3 +144,7 @@ func attack():
 
 func _on_Timer_timeout():
 	can_attack = true
+
+
+func _on_VisibilityNotifier2D_screen_entered():
+	$FSM.set_active(true)

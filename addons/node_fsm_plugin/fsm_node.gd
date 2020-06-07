@@ -34,6 +34,12 @@ func _get_configuration_warning() -> String:
 			warning.append('%s has no "%s" state' % [name, initial_state])
 
 	return warning.join('\n')
+	
+func set_active(pValue):
+	active = pValue
+	set_process(pValue)
+	set_process_input(pValue)
+	set_physics_process(pValue)
 
 
 func _set_current_state(state: String) -> void:
@@ -95,6 +101,10 @@ func _ready() -> void:
 		for child in get_children():
 			child.fsm = self as FSM
 			child.target = _target_node as Node
+			child.set_process(active)
+			child.set_process_input(active)
+			child.set_physics_process(active)
+			
 			_states_map[child.get_state_name()] = child as Node
 
 		self.current_state = initial_state
