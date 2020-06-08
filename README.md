@@ -19,4 +19,4 @@ TODO:
 - Add more levels.
 - Make it a full game?
 
-Prioritie is to make a full game as fast as possible for now. For that reason, the code might not be the best example. Once thats done, we will do some refactoring and polishing.
+Prioritie is to make a full game as fast as possible for now. For that reason, the code might not be the best example. Once thats done we will do some refactoring and polishing.
