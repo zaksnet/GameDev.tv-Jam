@@ -1,4 +1,6 @@
 # GameDev.tv-Jam
+# For now, this game is in active development.
+
 GameDev.tv Jam Theme = 'TIME'
 
 A Game made using Godot game engine for [GameDev.tv Jam](https://itch.io/jam/gamedevtv-community-jam) !
@@ -18,4 +20,3 @@ If this gets enough stars (5 to start with) we could:
 - Add more animations/tiles.
 - Add more levels.
 - Make it a full game?
-- Make it modular. This means that we could create a weapon system for example that can be taken and used in any project by just copy pasting the files.
