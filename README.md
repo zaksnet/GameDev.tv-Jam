@@ -1,4 +1,6 @@
 # GameDev.tv-Jam
+<b>For now, this game is in active development.</b>
+
 GameDev.tv Jam Theme = 'TIME'
 
 A Game made using Godot game engine for [GameDev.tv Jam](https://itch.io/jam/gamedevtv-community-jam) !
@@ -10,12 +12,11 @@ Graphic design, Animation and coding was done by [Zak Stam](https://github.com/z
 
 <img src="https://github.com/zaksnet/GameDev.tv-Jam/blob/master/Assets/Screenshots/Zombies-intro.png" width="250"> <img src="https://github.com/zaksnet/GameDev.tv-Jam/blob/master/Assets/Screenshots/gameplay-1.png" width="250"> <img src="https://github.com/zaksnet/GameDev.tv-Jam/blob/master/Assets/Screenshots/Boss.png" width="250">
 
-
-If this gets enough stars (5 to start with) we could:
-
+TODO:
 - Improve/Organize/Cleanup the code.
 - Add more weapons like grenades, bazooka, mines, AK!
 - Add more animations/tiles.
 - Add more levels.
 - Make it a full game?
-- Make it modular. This means that we could create a weapon system for example that can be taken and used in any project by just copy pasting the files.
+
+Prioritie is to make a full game as fast as possible for now. For that reason, the code might not be the best example. Once thats done we will do some refactoring and polishing.
