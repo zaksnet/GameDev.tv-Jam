@@ -43,10 +43,14 @@ func _process(delta):
 			$Sprite.scale = Vector2(2, 2)
 			if not $level4.playing:
 				player_charge_sfx(4)
+		elif $Timer.time_left > 1:
+			if not $loop.playing:
+				player_charge_sfx(5)
 
 
 
 func player_charge_sfx(level):
+	print("Playing lvl " + str(level) + " SFX")
 	$level1.stop()
 	$level2.stop()
 	$level3.stop()
@@ -60,3 +64,5 @@ func player_charge_sfx(level):
 			$level3.play()
 		4:
 			$level4.play()
+		5:
+			$loop.play()

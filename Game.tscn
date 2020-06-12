@@ -332,7 +332,7 @@ __meta__ = {
 visible = false
 position = Vector2( 519.992, 303.186 )
 frames = SubResource( 3 )
-frame = 27
+frame = 3
 playing = true
 
 [node name="Panel" type="Panel" parent="Node2D"]
