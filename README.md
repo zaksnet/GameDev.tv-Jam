@@ -1,5 +1,4 @@
 # GameDev.tv-Jam
-<b>For now, this game is in active development.</b>
 
 GameDev.tv Jam Theme = 'TIME'
 
